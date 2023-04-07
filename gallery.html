@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="favicon (4).ico" type="image/x-icon">
+    
+
+
+    <!-- Styling internal css -->
+
+    <style>
+        :root {
+  --primColor: #dcdcdc;
+  --secoColor: #555555;
+  --cornerRad: 4px;
+}
+body {
+  background-color: var(--primColor);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+details {
+  margin: 40px;
+}
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 12px 10px;
+  width: 23px;
+  height: 17px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: var(--cornerRad);
+  color: var(--secoColor);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+}
+summary::before,
+summary::after {
+  position: static;
+  top: 0;
+  left: 0;
+}
+summary::before {
+  content: "";
+}
+summary::after {
+  content: "III";
+  letter-spacing: -1px;
+}
+summary:hover {
+  transform: scale(1.1);
+}
+summary::marker {
+  font-size: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .menu {
+  animation-name: menuAnim;
+}
+details[open] summary::before {
+  content: "X";
+}
+details[open] summary::after {
+  content: "";
+}
+.menu {
+  height: 0;
+  width: fit-content;
+  border-radius: var(--cornerRad);
+  background-color: var(--primColor);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: closeMenu 300ms ease-in-out forwards;
+}
+.menu a {
+  padding: 12px 24px;
+  margin: 0 16px;
+  color: var(--secoColor);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
+}
+.menu a:nth-of-type(1) {
+  padding-top: 24px;
+}
+.menu a:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.menu a:hover {
+  filter: brightness(200%);
+}
+details::before {
+  content: "← Click This Button";
+  color: var(--secoColor);
+  position: absolute;
+  margin-left: 80px;
+  padding: 10px 10px;
+  opacity: 0.4;
+}
+details[open]::before {
+  animation: fadeMe 300ms linear forwards;
+}
+@keyframes menuAnim {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 312px;
+  }
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+        body {
+            font-family: 'Merriweather', serif;
+
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .gallery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .img-box {
+            width: 100px;
+            height: 500px;
+            margin: 10px;
+            border-radius: 50px;
+            background: url(image-1.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: width 0.5s;
+        }
+
+        .img-box:nth-child(2) {
+            background: url(image-2.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-box:nth-child(3) {
+            background: url(IMG_20170429_113640.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-box:nth-child(4) {
+            background: url(image-4.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-box h3 {
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            opacity: 0;
+            transition: bottom 0.5s, opacity 0.5s;
+        }
+
+        .img-box:hover {
+            width: 300px;
+            cursor: pointer;
+        }
+
+        .img-box:hover h3 {
+            opacity: 1;
+            bottom: 25px;
+        }
+
+        h1 {
+            padding: 30px 0px;
+        }
+
+        h2 {
+            padding-top: 30px;
+            color: #0096c7;
+        }
+
+        hr {
+            border: dotted #03071e 6px;
+            border-bottom: none;
+            width: 3%;
+
+
+        }
+
+
+
+        em {
+            color: #0096c7;
+        }
+
+        p {
+            padding: 10px;
+
+
+        }
+
+        
+
+
+    
+    </style>
+  
+</head>
+<!-- Html Implementation-->
+
+<body>
+    <details>
+        <summary></summary>
+        <nav class="menu">
+            <a href="#link">Home</a>
+            <a href="gallery.html">My Gallery</a>
+            <a href="testimonial.html">Favourite's</a>
+            <a href="hobbies.html">My Hobbies</a>
+            <a href="contactme.html">Contact Me</a>
+        </nav>
+    </details>
+    <h1>
+        <center> My Glimpse of Nature Walks and Exploration</center>
+    </h1>
+    <p>
+        <center>One of my favourite hobby is <em>Hiking</em>.My experience in the Mountains is all I am gonna share with
+            you, I have gained knowledge on the origin and
+            history of hiking and cultural significance.If I had, a day off I would make my experience an envy of all by
+            <em>going hiking, sight seeing, and
+                yoga in the mountains.</em>
+        </center>
+        <br>
+
+    </p>
+    <div class="container">
+        <div class="gallery">
+            <div class="img-box">
+                <h3>Hill Climb</h3>
+            </div>
+            <div class="img-box">
+                <h3>Trekking</h3>
+            </div>
+            <div class="img-box">
+                <h3>Roshu's</h3>
+            </div>
+            <div class="img-box">
+                <h3>Nature</h3>
+            </div>
+        </div>
+    </div>
+    <h2>
+        <center>My first trekking experience</center>
+    </h2>
+    <p>
+        <center>I go hiking because it's something that I want to do, but with my spring and summer schedule don't have
+            time for.
+            Going hiking would make it a day for other people to envy because it's an environment that doesn't create
+            stress or
+            conjure up worries. Hiking would create a relaxing and good vibe for the day unlike school</center>
+    </p>
+    <center><audio controls>
+            <source src="urupin__chaffinch-ziablik.mp3" type="audio/ogg">
+
+            Your browser does not support the audio element.
+        </audio></center>
+    <p>
+        <center>Throughout my time learning and traveling to different places on the scavenger hunt around the bay I
+            found the most
+            rewarding and fun experience to be the Bay Area Discovery Site hike</center>
+    </p>
+    <center>
+        <video width="500" height="240" controls>
+            <source src="production ID_4158839.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </center>
+
+
+    <hr>
+
+</body>
+
+</html>

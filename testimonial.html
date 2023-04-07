@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Collection of my passion!</title>
+    <!-- Styling using internal css-->
+    <style>
+        :root {
+  --primColor: #dcdcdc;
+  --secoColor: #555555;
+  --cornerRad: 4px;
+}
+body {
+  background-color: var(--primColor);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+details {
+  margin: 40px;
+}
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 12px 10px;
+  width: 23px;
+  height: 17px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: var(--cornerRad);
+  color: var(--secoColor);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+}
+summary::before,
+summary::after {
+  position: static;
+  top: 0;
+  left: 0;
+}
+summary::before {
+  content: "";
+}
+summary::after {
+  content: "III";
+  letter-spacing: -1px;
+}
+summary:hover {
+  transform: scale(1.1);
+}
+summary::marker {
+  font-size: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .menu {
+  animation-name: menuAnim;
+}
+details[open] summary::before {
+  content: "X";
+}
+details[open] summary::after {
+  content: "";
+}
+.menu {
+  height: 0;
+  width: fit-content;
+  border-radius: var(--cornerRad);
+  background-color: var(--primColor);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: closeMenu 300ms ease-in-out forwards;
+}
+.menu a {
+  padding: 12px 24px;
+  margin: 0 16px;
+  color: var(--secoColor);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
+}
+.menu a:nth-of-type(1) {
+  padding-top: 24px;
+}
+.menu a:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.menu a:hover {
+  filter: brightness(200%);
+}
+details::before {
+  content: "← Click This Button";
+  color: var(--secoColor);
+  position: absolute;
+  margin-left: 80px;
+  padding: 10px 10px;
+  opacity: 0.4;
+}
+details[open]::before {
+  animation: fadeMe 300ms linear forwards;
+}
+@keyframes menuAnim {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 312px;
+  }
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #e8e8e4, #d8e2dc);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+        }
+
+        .slider {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+
+            100% {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+
+        .slider span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+
+        }
+
+        .slider span img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: 2s;
+        }
+
+        .slider span:hover img {
+            transform: translateY(-50px) scale(1.2);
+        }
+
+
+        box-shadow: none;
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+        rel="stylesheet">
+</head>
+<!-- Creating Image slider-->
+
+<body>
+    <details>
+        <summary></summary>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">My Gallery</a>
+            <a href="testimonial.html">Favourite's</a>
+            <a href="hobbies.html">My Hobbies</a>
+            <a href="contactme.html">Contact Me</a>
+        </nav>
+    </details>
+
+    <div class="slider">
+        <span style="--i:1;"><img src="IMG-0a4e7fcbdfd969f2f0fd035ef73cd3a8-V.jpg" alt="My life"></span>
+        <span style="--i:2;"><img src="knowme.jpg" alt="know me more"></span>
+        <span style="--i:3;"><img src="pizza.jpg" alt="pizza favourite dish"></span>
+        <span style="--i:4;"><img src="me.jpg" alt="Hi there"></span>
+        <span style="--i:5;"><img src="paint.jpg" alt="I paint"></span>
+        <span style="--i:6;"><img src="book.jpg" alt="my book"></span>
+        <span style="--i:7;"><img src="sing.jpg" alt="I sing"></span>
+        <span style="--i:8;"><img src="pht.jpg" alt="my passion"></span>
+    </div>
+</body>
+<!-- Fomation of footer-->
+
+<footer class="new bg_color">
+    <div class="one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s"
+                        style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="footer_bg">
+            <div class="footer_bg_one"></div>
+            <div class="footer_bg_two"></div>
+        </div>
+    </div>
+
+
+
+
+</footer>
+
+<!-- .Fomation of footer-->
+
+</html>

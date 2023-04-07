@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Roshu's Hobbies</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<!-- Internal CSS Implementation-->
+<style>
+    :root {
+  --primColor: #dcdcdc;
+  --secoColor: black;
+  --cornerRad: 4px;
+}
+body {
+  background-color: var(--primColor);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+details {
+  margin: 40px;
+}
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 12px 10px;
+  width: 23px;
+  height: 17px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: var(--cornerRad);
+  color: var(--secoColor);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+}
+summary::before,
+summary::after {
+  position: static;
+  top: 0;
+  left: 0;
+}
+summary::before {
+  content: "";
+}
+summary::after {
+  content: "III";
+  letter-spacing: -1px;
+}
+summary:hover {
+  transform: scale(1.1);
+}
+summary::marker {
+  font-size: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .menu {
+  animation-name: menuAnim;
+}
+details[open] summary::before {
+  content: "X";
+}
+details[open] summary::after {
+  content: "";
+}
+.menu {
+  height: 0;
+  width: fit-content;
+  border-radius: var(--cornerRad);
+  background-color: var(--primColor);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: closeMenu 300ms ease-in-out forwards;
+}
+.menu a {
+  padding: 12px 24px;
+  margin: 0 16px;
+  color: var(--secoColor);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
+}
+.menu a:nth-of-type(1) {
+  padding-top: 24px;
+}
+.menu a:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.menu a:hover {
+  filter: brightness(200%);
+}
+details::before {
+  content: "← Click This Button";
+  color: var(--secoColor);
+  position: absolute;
+  margin-left: 80px;
+  padding: 10px 10px;
+  opacity: 0.4;
+}
+details[open]::before {
+  animation: fadeMe 300ms linear forwards;
+}
+@keyframes menuAnim {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 312px;
+  }
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+    #six {
+    margin: 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.seven {
+    font-size: 1em;
+}
+
+.top-container {
+    position: relative;
+    padding-top: 100px;
+}
+
+.eight {
+    margin: 50px auto 0 auto;
+    padding: 20px;
+
+    font-size: 2rem;
+    color: #66bfbf;
+    line-height: 8rem;
+
+}
+
+.nine {
+
+    color: #66bfbf;
+    font-size: 3rem;
+}
+
+
+.et {
+    border: dotted #66bfbf 6px;
+    border-bottom: none;
+    width: 3%;
+
+}
+
+.skill-row {
+    width: 50%;
+    margin: auto;
+    padding: 50px;
+    text-align: left;
+    line-height: 2;
+
+}
+
+.first-img {
+    width: 25%;
+    float: left;
+    margin: 30px;
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 10px;
+    font-size: large;
+}
+
+.second-img {
+    width: 25%;
+    float: right;
+    margin-right: 30px;
+}
+
+
+
+.b {
+    text-decoration: underline;
+    color: black;
+}
+
+.two {
+    position: absolute;
+    right: 300px;
+    top: 50px;
+
+
+}
+
+.one {
+    position: absolute;
+    left: 300px;
+    bottom: 150px;
+}
+
+.bottom-container {
+    background-color: #66bfbf;
+    height: 100px;
+    width: 100%;
+    margin-top: 30px;
+    padding: 50px;
+}
+
+.ten {
+    color: white;
+}
+</style>
+<!-- HTML Implementation-->
+
+<body id="six">
+    <details>
+        <summary></summary>
+        <nav class="menu">
+            <a href="#link">Home</a>
+            <a href="gallery.html">My Gallery</a>
+            <a href="testimonial.html">Favourite's</a>
+            <a href="hobbies.html">My Hobbies</a>
+            <a href="contactme.html">Contact Me</a>
+        </nav>
+    </details>
+    <div class="top-container">
+        <img class="two" src="cloud.png" alt="cloud pic">
+        <h1 class="eight">Hi it's me Roshu</h1>
+        <img class="one" src="cloud.png" alt="pic cloud">
+
+    </div>
+    <div class="middle-container">
+        <div class="profile">
+            <img src="IMG_20180702_173720-modified.png" alt="roshu pic" width="200px" height="200px">
+            <h2 class="nine"> <span class="b"> I am beginner</span> programmer as of now.</h2>
+            <p class="seven">Scrolll along to know more about me and my hobbies .See you there!😉</p>
+            <hr class="et">
+            <h2 class="nine">Know me More</h2>
+            <p class="seven">Hi I am 23 yr old.Living in Sydney,NSW since 2019!I am ambitious and driven.I thrive on
+                challenges and constantly set goals for myself, so I have something to strive
+                toward.I'm not comfortable with settling, and I'm always looking for an opportunity to do better and
+                achieve
+                greatness</p>
+                <video width="320" height="240" controls>
+                    <source src="Pexels Videos 2766.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+            <div class="skills">
+                <h2 class="nine">My Passion</h2>
+                <p class="seven">I'm a people person. I love meeting new people and learning about their lives and their
+                    backgrounds.I can almost always find common ground with strangers, and I like making people feel
+                    comfortable in
+                    my presence.
+                    <hr class="et">
+                <div class="skill-row">
+                    <img class="first-img" src="https://media.giphy.com/media/XTOggaBhOQPMX61frP/giphy.gif"
+                        alt="skill sec" height="200px" width="200px">
+                    <h2 class="nine">My favourite Sport</h2>
+                    <p class="seven">I love Swimming! When I'm in the water I'm elementally myself, floating free of any
+                        worries,
+                        selfconsciousness or physical discomfort.Let me share something interesting fact about swimming.
+                        Swimming is a genuine full body workout, making it the perfect exercise for
+                        toning up and burning fat.</p>
+                        
+                    <hr class="et">
+                </div>
+                <div class="skill-row">
+                    <img class="second-img" src="https://media.giphy.com/media/2RiU1RUjyh4C4/giphy.gif"
+                        alt="pic of study" width="150px" height="170px">
+                    <h2 class="nine">IT Background</h2>
+                    <p class="seven">Since a kid I wanted to be a doctor but here we are doing programming now.
+                        Intersting how things can change and you end up else where.When I grew up as a kid I realized
+                        that I wasn't interested in medical field anymore seeing all the pain and suffering inside a
+                        medical facility tore me up.And I thought to myself I don't wanna do it</p>
+                    <hr class="et">
+                </div>
+            </div>
+            <hr>
+
+</body>
+
+</html>
